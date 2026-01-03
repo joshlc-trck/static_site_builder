@@ -1,0 +1,4 @@
+2026-01-02 15:35:18,703 - root - INFO - cwd : /Users/shashankpandey/workspace/bootdev_static_site/src
+2026-01-02 15:35:18,703 - root - INFO - source : /Users/shashankpandey/workspace/bootdev_static_site/src/src/static
+2026-01-02 15:35:18,704 - root - INFO - destination: /Users/shashankpandey/workspace/bootdev_static_site/src/public
+2026-01-02 15:35:18,704 - root - WARNING - Making new directors along the path: /Users/shashankpandey/workspace/bootdev_static_site/src/public
