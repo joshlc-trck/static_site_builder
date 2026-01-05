@@ -44,7 +44,8 @@ def generate_page(from_path, temp_path, dest_path, base_path):
     #print(f"The template is : {template}") 
     template = template.replace('href="/',f'href="{base_path}')
     template = template.replace('src="/',f'src="{base_path}')
-    
+    template = template.replace('<title>','<h1>')
+    template = template.replace('</title>','</h1>')
     os.makedirs(os.path.dirname(dest_path),exist_ok = True)
     with open(dest_path,'w') as html_dest:
          html_dest.write(template)
