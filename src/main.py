@@ -6,7 +6,7 @@ from _generate_page import generate_page_rec
 import logging
 import os
 import shutil
-
+import sys
 #logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 logging.basicConfig(
@@ -45,6 +45,10 @@ def main():
     #output = repr(Test_text_node)
     #print(output)
     '''
+    base_path = sys.argv[1]
+    if not base_path:
+        base_path = '/'
+
     def directory_cleaner(directory):
         if os.path.isdir(directory):
             ls_l = os.listdir(directory)
@@ -89,16 +93,16 @@ def main():
     logging.info(f"cwd : {cwd}")
     source = os.path.join(cwd,'src/static')
     logging.info(f"source : {source}")
-    destination = os.path.join(cwd,'public')
+    destination = os.path.join(cwd,'docs')
     logging.info(f"destination: {destination}")
     directory_copier(source,destination)
     
 
     temp_path = os.path.join(cwd,'template.html')
     from_path = os.path.join(cwd,'content')
-    dest_path = os.path.join(cwd,'public')
+    dest_path = os.path.join(cwd,'docs')
     logging.info(f"from_path :{from_path} ; dest_path :{dest_path} ; temp_path :{temp_path}")
-    generate_page_rec(from_path,temp_path,dest_path)
+    generate_page_rec(from_path,temp_path,dest_path, base_path)
     
         
         
