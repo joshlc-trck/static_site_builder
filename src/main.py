@@ -46,6 +46,7 @@ def main():
     #print(output)
     '''
     base_path = sys.argv[1]
+    logging.info(f"base path is :{base_path}")
     if not base_path:
         base_path = '/'
 

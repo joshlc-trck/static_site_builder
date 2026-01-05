@@ -1,5 +1,5 @@
 from _markdown_extractor import markdown_to_html_node, extract_title
-from _html_node import ParentNode
+from _html_node import ParentNode 
 import os
 import re
 import logging
@@ -42,13 +42,13 @@ def generate_page(from_path, temp_path, dest_path, base_path):
     temp_list = re.split(r"{{[\w ]+}}",template)
     template = temp_list[0] + Title + temp_list[1] + html_string + temp_list[2]
     #print(f"The template is : {template}") 
-    template.replace('href="/',f'href="{base_path}')
-    template.replace('href="/',f'href="{base_path}')
+    template = template.replace('href="/',f'href="{base_path}')
+    template = template.replace('src="/',f'src="{base_path}')
     
     os.makedirs(os.path.dirname(dest_path),exist_ok = True)
     with open(dest_path,'w') as html_dest:
          html_dest.write(template)
-    with open(dest_path, 'r') as check:
-         output = check.read()
+    #with open(dest_path, 'r') as check:
+    #     output = check.read()
          #print(f"At the destination {dest_path} the html looks like : {output}")
 
